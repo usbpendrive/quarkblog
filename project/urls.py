@@ -23,6 +23,7 @@ from base import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tags/<slug:slug>/', views.tag, name='tag'),
+    path('search/', include('search.urls')),
     path('blog/', include('blog.urls')),
     path('', include('base.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
