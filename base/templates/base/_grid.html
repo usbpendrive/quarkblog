@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 {% if item.image %}
-                    <img class="items-item-image" src="{{ item.image.url }}">
+                    <img class="items-item-image" src="{{ item.image_thumbnail.url }}">
                 {% else %}
                     <img class="items-item-image" src="{% static 'base/images/no-image.png' %}">
                 {% endif %}
