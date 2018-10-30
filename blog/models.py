@@ -6,6 +6,24 @@ from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFill
 
 
+class Tag(models.Model):
+    title = models.CharField(max_length=255, default='')
+    slug = models.SlugField(default='', blank=True)
+
+    class Meta:
+        ordering = ['title']
+
+    def save(self, *arg, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*arg, **kwargs)
+
+    def __str__(self):
+        return '%s' % self.title
+
+    def get_absolute_url(self):
+        return reverse('tag', args=[str(self.slug)])
+
+
 class Post(models.Model):
     title = models.CharField(max_length=255, default='', unique=True)
     slug = models.SlugField(default='', blank=True)
@@ -14,6 +32,7 @@ class Post(models.Model):
     description = models.TextField(default='', blank=True)
     body = models.TextField(default='', blank=True)
     image = models.ImageField(default='', blank=True, upload_to='post_images')
+    tags = models.ManyToManyField(Tag, blank=True)
     image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(250, 100)],
                                      format='JPEG', options={'quality': 60})
     image_large = ImageSpecField(source='image', processors=[ResizeToFill(700, 250)],
