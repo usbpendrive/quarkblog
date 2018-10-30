@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFill
@@ -33,6 +34,7 @@ class Post(models.Model):
     body = models.TextField(default='', blank=True)
     image = models.ImageField(default='', blank=True, upload_to='post_images')
     tags = models.ManyToManyField(Tag, blank=True)
+    author = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     image_thumbnail = ImageSpecField(source='image', processors=[ResizeToFill(250, 100)],
                                      format='JPEG', options={'quality': 60})
     image_large = ImageSpecField(source='image', processors=[ResizeToFill(700, 250)],

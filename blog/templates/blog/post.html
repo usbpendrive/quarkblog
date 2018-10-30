@@ -5,7 +5,13 @@
 
 {% block content %}
 <div class="post">
-    <span class="post-author">By <strong>admin</strong></span>
+    <span class="post-author">By <strong>
+        {% if item.author.profile.display_name %}
+            {{ item.author.profile.display_name }}
+        {% else %}
+            {{ item.author }}
+        {% endif %}
+    </strong></span>
     <span class="post-date">{{ item.post_date | date:"d M, Y" }}</span>
     <div class="post-description clearfix">
         {{ item.description }}
