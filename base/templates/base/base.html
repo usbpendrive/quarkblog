@@ -23,6 +23,16 @@
             <a class="menu-li-a" href="">About</a>
         </li>
     </ul>
+    <img onclick="myToggle()" class="mobile-menu toggle show-mobile" alt="menu"
+         src="{% static 'base/images/hamburger.png' %}">
+    <ul id="dropdown" class="dropdown">
+        <li class="dropdown-li dropdown-li--active">
+            <a class="dropdown-li-a" href="/">Home</a>
+        </li>
+        <li class="dropdown-li">
+            <a class="dropdown-li-a" href="">About</a>
+        </li>
+    </ul>
     <div class="header-slogan">Thoughts on <strong>Artificial Intelligence</strong></div>
 </div>
 
@@ -34,5 +44,7 @@
 <div class="footer-bottom">
     @ {% now "Y" %} QuarkBlog. All rights reserved.
 </div>
+
+<script src="{% static "base/js/dropdown.js" %}"></script>
 </body>
 </html>
