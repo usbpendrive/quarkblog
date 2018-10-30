@@ -1,0 +1,14 @@
+{
+  "name": "quarkblog",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Fernando <ferry.fernando@gmail.com> (https://github.com/usbpendrive)",
+  "license": "MIT",
+  "scripts": {
+    "gulp": "gulp sass"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2"
+  }
+}

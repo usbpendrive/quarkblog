@@ -81,12 +81,20 @@ target/
 
 ### Django ###
 *.log
-*.pot
 *.pyc
-__pycache__/
 local_settings.py
 media
 
 .env
 venv
 db.sqlite3
+
+# Logs
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
