@@ -47,6 +47,9 @@ ul {
     padding-top: 5em;
     font-weight: 300;
     letter-spacing: 1px; }
+    @media (min-width: 1200px) {
+      .header-slogan {
+        padding-top: 2.5em; } }
 
 .footer {
   text-align: center;
@@ -67,9 +70,36 @@ ul {
 
 .main {
   margin: 1em auto;
-  width: 60em;
   min-height: 500px;
   padding: 2em;
   background-color: #fff;
   border: 1px solid #E8E8E8;
   border-radius: 3px; }
+  @media (min-width: 999px) {
+    .main {
+      width: 60em; } }
+
+.menu {
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  color: #fff;
+  margin: 0;
+  display: none; }
+  @media (min-width: 1200px) {
+    .menu {
+      display: inherit; } }
+  .menu-li {
+    display: inline-block; }
+    .menu-li-a {
+      display: inline-block;
+      color: #ccc;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 1em;
+      margin: 0;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+      .menu-li-a--active, .menu-li-a:hover {
+        color: #fff; }

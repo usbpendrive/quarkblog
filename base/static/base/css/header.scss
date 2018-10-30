@@ -22,5 +22,8 @@
     padding-top: 5em;
     font-weight: 300;
     letter-spacing: 1px;
+    @include for-desktop-up {
+      padding-top: 2.5em;
+    }
   }
 }
