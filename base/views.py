@@ -22,6 +22,10 @@ def tag(request, slug=None):
     return render(request, 'base/tag.html', {'items': items, 'tag': tag, 'title': title})
 
 
+def profile(request):
+    return render(request, 'base/profile.html', {'title': 'Profile'})
+
+
 class Register(generic.CreateView):
     form_class = UserCreationForm
     template_name = 'registration/register.html'

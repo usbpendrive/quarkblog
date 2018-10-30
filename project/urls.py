@@ -25,6 +25,7 @@ urlpatterns = [
     path('tags/<slug:slug>/', views.tag, name='tag'),
     path('search/', include('search.urls')),
     path('account/register/', views.Register.as_view(), name='register'),
+    path('accounts/profile/', views.profile, name='profile'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('blog/', include('blog.urls')),
     path('', include('base.urls')),

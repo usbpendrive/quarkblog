@@ -316,3 +316,6 @@ form textarea#id_description {
     font-size: 1.2em;
     font-weight: 300;
     height: 3em; }
+
+.profile-field {
+  margin: 0.5em 0; }
