@@ -78,6 +78,10 @@ ul {
   @media (min-width: 999px) {
     .main {
       width: 60em; } }
+  .main--no-box {
+    padding: 0;
+    background-color: inherit;
+    border: inherit; }
 
 .menu {
   list-style: none;
