@@ -15,6 +15,20 @@
   &-brand-name {
     color: #ccc;
   }
+  &-user {
+    display: none;
+    position: absolute;
+    top: 0.8em;
+    right: 1em;
+    color: #aaa;
+    font-size: 14px;
+    @include for-desktop-up {
+      display: inherit;
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
   &-slogan {
     font-size: 18px;
     text-align: center;
