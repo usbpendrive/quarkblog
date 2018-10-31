@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -22,6 +23,7 @@ def tag(request, slug=None):
     return render(request, 'base/tag.html', {'items': items, 'tag': tag, 'title': title})
 
 
+@login_required()
 def profile(request):
     return render(request, 'base/profile.html', {'title': 'Profile'})
 

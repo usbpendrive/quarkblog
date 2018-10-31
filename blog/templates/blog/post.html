@@ -5,6 +5,7 @@
 
 {% block content %}
 <div class="post">
+    <!--<p>Current user permissions: {{ request.user.get_all_permissions }}</p>-->
     <span class="post-author">By <strong>
         {% if item.author.profile.display_name %}
             {{ item.author.profile.display_name }}
@@ -13,6 +14,9 @@
         {% endif %}
     </strong></span>
     <span class="post-date">{{ item.post_date | date:"d M, Y" }}</span>
+    {% if perms.blog.change_post %}
+        | <a class="post-edit" href="{% url 'edit_post' item.id %}">Edit</a>
+    {% endif %}
     <div class="post-description clearfix">
         {{ item.description }}
     </div>
