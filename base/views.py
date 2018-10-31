@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views import generic
 
 from blog.models import Post, Tag
+from base.forms import CustomUserCreationForm
 
 
 def home(request):
@@ -29,6 +29,6 @@ def profile(request):
 
 
 class Register(generic.CreateView):
-    form_class = UserCreationForm
+    form_class = CustomUserCreationForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
